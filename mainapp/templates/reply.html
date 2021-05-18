@@ -1,0 +1,29 @@
+welcome <!-- {{name}}
+    <br><br>
+    
+    <form action="add" method="POST">
+        {% csrf_token %}
+    Maths: <input type="text" name="mark1"><br><br><br>
+    Scince: <input type="text" name="mark2"><br><br><br>
+    <input type="submit">
+    </form>
+     -->
+    
+    <table border="1">
+        <tr>
+            <th> Student Name</th>
+            <th> Roll No</th>
+            <th> Maths</th>
+            <th> Scince</th>
+            <th> Total</th>
+        </tr>
+        {% for result in mark %}
+        <tr>
+            <td>{{result.sname}}</td>
+            <td>{{result.srno}}</td>
+            <td>{{result.mark1}}</td>
+            <td>{{result.mark2}}</td>
+            <td>{{result.total}}</td>
+        </tr>
+        {% endfor%}
+    </table>

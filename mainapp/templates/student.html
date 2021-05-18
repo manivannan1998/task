@@ -1,0 +1,23 @@
+{% extends 'body.html' %}
+
+<head>
+    <title>student</title>
+</head>
+{% block content %}
+<h1>Students Login</h1>
+<h2>Create or New Record Insert</h2>
+<hr/>
+<form method="POST">
+{% csrf_token %}
+student name :<input type="text" placeholder="Enter Student Name" name="name" required auto="off"><br><br><br>
+Roll No      :<input type="text" placeholder="Enter your Register No" name="rno" required><br><br><br>
+Date of Birth:<input type="date" placeholder="Enter your DOB" name="dob" required><br><br><br>
+<input type="submit">
+{% if messages %}
+{% for message in messages %}
+<h4 style="color:blue">{{message}}</h4>
+{% endfor %}
+{% endif %}
+</form>
+{% endblock %}
+
